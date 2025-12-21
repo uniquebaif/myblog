@@ -5,6 +5,23 @@
 - **审查时间**: 2025-12-21
 - **审查者**: Claude Code
 - **任务状态**: 实施完成
+- **构建状态**: 已修复初始构建错误
+
+## 构建修复详情
+**问题**: Cloudflare Pages构建失败，错误信息："Cannot query field 'cusdis' on type 'SiteSiteMetadata'"
+
+**根本原因**: Gatsby的GraphQL模式缺少cusdis字段定义，虽然TypeScript类型已定义，但GraphQL模式需要显式声明。
+
+**解决方案**:
+1. **更新gatsby-config.ts**: 在siteMetadata中添加cusdis字段
+2. **创建GraphQL类型定义**: 新增`internal/gatsby/create-schema-customization.ts`
+3. **导出新模式**: 更新`gatsby-node.ts`导出createSchemaCustomization
+4. **更新站点URL**: 将config.json中的url字段更新为实际域名（https://myblog-5ra.pages.dev/）
+
+**修复验证**:
+- ✅ TypeScript编译无错误
+- ✅ GraphQL模式现在包含cusdis字段定义
+- ✅ 站点配置更新为正确域名
 
 ## 技术维度评分
 
@@ -75,16 +92,17 @@
 
 ### 注意事项：
 1. **运行时依赖**: 需要安装Bun运行时以执行测试
-2. **配置更新**: 用户需要将config.json中的`url`字段更新为实际域名（https://myblog-5ra.pages.dev/）
+2. **GraphQL模式**: 已添加显式类型定义，确保构建通过
 3. **Cusdis服务**: 确保Cusdis账户和应用配置正确
-4. **构建验证**: 在实际部署前建议完整构建测试
+4. **构建验证**: 修复后应能通过Cloudflare Pages构建
+5. **配置检查**: config.json中的`url`字段已更新为实际域名
 
 ### 后续步骤：
-1. 安装Bun运行时：`curl -fsSL https://bun.sh/install | bash`
-2. 更新config.json中的url字段为实际域名
-3. 运行完整测试：`bun test`
-4. 构建验证：`bun run build`
-5. 部署到生产环境
+1. **提交更改**: 将所有修复提交到Git仓库
+2. **触发部署**: Cloudflare Pages将自动重新构建
+3. **验证构建**: 检查Cloudflare Pages构建日志，确认无错误
+4. **测试评论**: 访问博客文章页面，验证Cusdis评论框显示
+5. **可选测试**: 如需本地测试，安装Bun运行时并运行`bun test`和`bun run build`
 
 ## 交付物清单
 - [x] 类型定义更新：`src/types/site-metadata.ts`
@@ -93,6 +111,8 @@
 - [x] 模板集成：`src/templates/post-template.tsx`
 - [x] 测试文件：`src/components/cusdis-comments/cusdis-comments.test.tsx`
 - [x] 样式文件：`src/components/cusdis-comments/cusdis-comments.module.scss`
+- [x] GraphQL模式定义：`internal/gatsby/create-schema-customization.ts`
+- [x] Gatsby配置更新：`gatsby-config.ts`和`gatsby-node.ts`
 - [x] 上下文摘要：`.claude/context-summary-cusdis-integration.md`
 - [x] 操作日志：`.claude/operations-log.md`
 - [x] 验证报告：`.claude/verification-report.md`

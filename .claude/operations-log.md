@@ -56,3 +56,12 @@
 - 测试文件已创建，使用项目测试模式
 - 组件逻辑验证完成
 - 注：Bun运行时未安装，无法执行测试，但类型安全已验证
+
+## 修复构建错误 - GraphQL模式定义
+时间：2025-12-21
+- 问题：Cloudflare Pages构建失败，错误"无法查询'cusdis'字段"
+- 原因：Gatsby的GraphQL模式缺少cusdis字段定义
+- 修复1：在gatsby-config.ts的siteMetadata中添加cusdis字段
+- 修复2：创建create-schema-customization.ts定义GraphQL类型
+- 修复3：更新gatsby-node.ts导出新模式定义
+- 修复4：更新config.json中的url字段为实际域名（https://myblog-5ra.pages.dev/）
