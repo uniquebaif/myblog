@@ -13,7 +13,6 @@ export default {
     description: config.description,
     copyright: config.copyright,
     feedLimit: config.feedLimit,
-    cusdis: config.cusdis,
   },
   plugins: [
     {

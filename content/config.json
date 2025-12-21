@@ -3,11 +3,11 @@
   "url": "https://lumen.alxshelepenok.com",
   "description": "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
   "copyright": "© All rights reserved.",
-  "googleAnalyticsId": "G-MSQGQG14PK",
   "cusdis": {
-    "appId": "",
+    "appId": "24f629ec-7511-4e7a-a526-367e903a010a",
     "host": "https://cusdis.com"
   },
+  "googleAnalyticsId": "G-MSQGQG14PK",
   "pathPrefix": "/",
   "feedLimit": 4,
   "menu": [
