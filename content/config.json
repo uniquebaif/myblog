@@ -4,6 +4,10 @@
   "description": "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
   "copyright": "© All rights reserved.",
   "googleAnalyticsId": "G-MSQGQG14PK",
+  "cusdis": {
+    "appId": "",
+    "host": "https://cusdis.com"
+  },
   "pathPrefix": "/",
   "feedLimit": 4,
   "menu": [
