@@ -10,7 +10,7 @@ interface PostCommentsProps {
 }
 
 const PostComments: FC<PostCommentsProps> = ({ slug, title }) => {
-  const { cusdis } = useSiteMetadata();
+  const { cusdis, url } = useSiteMetadata();
   const scriptLoaded = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -51,8 +51,11 @@ const PostComments: FC<PostCommentsProps> = ({ slug, title }) => {
   }
 
   const host = cusdis.host || "https://cusdis.com";
+  // 构建完整的页面 URL：使用站点 URL + slug，如果浏览器环境可用则使用 window.location.href
   const pageUrl =
-    typeof window !== "undefined" ? window.location.href : "";
+    typeof window !== "undefined"
+      ? window.location.href
+      : `${url}${slug.startsWith("/") ? slug : `/${slug}`}`;
 
   return (
     <div className={styles.postComments} ref={containerRef}>
