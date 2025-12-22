@@ -19,7 +19,8 @@ const PostTemplate: FC<PostTemplateProps> = ({
   data: { markdownRemark },
 }) => {
   const { url } = useSiteMetadata();
-  const pageUrl = `${url}${markdownRemark.fields.slug}`;
+  const pageSlug = markdownRemark.frontmatter.slug || markdownRemark.fields.slug;
+  const pageUrl = `${url}${pageSlug}`;
 
   return (
     <Layout>

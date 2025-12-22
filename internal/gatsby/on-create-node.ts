@@ -10,12 +10,18 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, actions, getNode }) =>
   const { createNodeField } = actions;
 
   if (node.internal.type === "MarkdownRemark") {
+    
     const { frontmatter, parent } = node as Node & Edge["node"];
     const { tags, category, slug } = frontmatter || {};
 
     if (slug) {
+      const isAbsolute = slug.startsWith("/");
       const dirname = parent && getNode(parent)?.relativeDirectory;
-      const value = typeof dirname === "string" ? concat("/", dirname, "/", slug) : concat("/", slug);
+      const value = isAbsolute
+        ? slug
+        : typeof dirname === "string"
+          ? concat("/", dirname, "/", slug)
+          : concat("/", slug);
 
       createNodeField({ node, name: "slug", value });
     } else {
