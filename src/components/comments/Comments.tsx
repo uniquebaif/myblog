@@ -42,7 +42,7 @@ const Comments: FC<CommentsProps> = ({ config }) => {
         emitMetadata="0"
         inputPosition="top"
         theme={mode === "dark" ? "dark" : "light"}
-        lang="zh-CN"
+        lang="en"
         loading="lazy"
       />
     </div>
