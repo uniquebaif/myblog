@@ -1,7 +1,23 @@
-const visit = require("unist-util-visit");
+// 手动实现 visit 功能，避免 ESM/CJS 兼容性问题
+function visit(tree, type, visitor) {
+  function recurse(node, index, parent) {
+    if (node.type === type) {
+      visitor(node, index, parent);
+    }
+    if (node.children) {
+      // 反向遍历，因为我们可能会修改数组
+      for (let i = node.children.length - 1; i >= 0; i--) {
+        recurse(node.children[i], i, node);
+      }
+    }
+  }
+  recurse(tree, null, null);
+}
 
 module.exports = ({ markdownAST }) => {
   visit(markdownAST, "text", (node, index, parent) => {
+    if (!parent || index === null) return;
+    
     const value = node.value;
     const regex = /==([^=]+)==/g;
     
@@ -49,4 +65,3 @@ module.exports = ({ markdownAST }) => {
   
   return markdownAST;
 };
-
