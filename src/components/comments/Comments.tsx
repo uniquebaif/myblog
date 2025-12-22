@@ -1,6 +1,4 @@
-import React, { type FC } from "react";
-
-import Giscus from "@giscus/react";
+import React, { type FC, useState, useEffect } from "react";
 
 import { useTheme } from "@/hooks/use-theme";
 
@@ -19,8 +17,15 @@ interface CommentsProps {
 
 const Comments: FC<CommentsProps> = ({ config }) => {
   const [{ mode }] = useTheme();
+  const [Giscus, setGiscus] = useState<React.ComponentType<any> | null>(null);
 
-  if (!config.repo || !config.repoId) {
+  useEffect(() => {
+    import("@giscus/react").then((mod) => {
+      setGiscus(() => mod.default);
+    });
+  }, []);
+
+  if (!config.repo || !config.repoId || !Giscus) {
     return null;
   }
 

@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState, useCallback } from "react";
+import React, { type FC, useEffect, useState, useCallback, useMemo } from "react";
 
 import * as styles from "./table-of-contents.module.scss";
 
@@ -13,7 +13,7 @@ interface TableOfContentsProps {
 }
 
 const parseTableOfContents = (html: string): TocItem[] => {
-  if (!html) return [];
+  if (!html || typeof window === "undefined") return [];
 
   const items: TocItem[] = [];
   const parser = new DOMParser();
@@ -33,7 +33,16 @@ const parseTableOfContents = (html: string): TocItem[] => {
 
 const TableOfContents: FC<TableOfContentsProps> = ({ tableOfContents }) => {
   const [activeId, setActiveId] = useState<string>("");
-  const items = parseTableOfContents(tableOfContents);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const items = useMemo(
+    () => (isMounted ? parseTableOfContents(tableOfContents) : []),
+    [tableOfContents, isMounted]
+  );
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
