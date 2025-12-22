@@ -5,7 +5,7 @@
   display: none;
 }
 
-@include mixins.breakpoint-lg {
+@include mixins.breakpoint-md {
   .toc {
     display: block;
     position: sticky;

@@ -43,7 +43,7 @@
   }
 }
 
-@include mixins.breakpoint-lg {
+@include mixins.breakpoint-md {
   .post {
     .wrapper {
       max-width: calc(variables.$layout-post-single-width + 250px);
@@ -59,7 +59,11 @@
     .footer {
       @include mixins.padding-equal(0);
     }
+  }
+}
 
+@include mixins.breakpoint-lg {
+  .post {
     .buttons {
       left: 30px;
       max-width: none;
