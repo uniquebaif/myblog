@@ -24,10 +24,6 @@ const useSiteMetadata = () => {
           title
           copyright
           description
-          cusdis {
-            appId
-            host
-          }
         }
       }
     }

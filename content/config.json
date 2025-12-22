@@ -1,12 +1,8 @@
 {
   "title": "Blog by John Doe",
-  "url": "https://myblog-5ra.pages.dev/",
+  "url": "https://lumen.alxshelepenok.com",
   "description": "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
   "copyright": "© All rights reserved.",
-  "cusdis": {
-    "appId": "24f629ec-7511-4e7a-a526-367e903a010a",
-    "host": "https://cusdis.com"
-  },
   "googleAnalyticsId": "G-MSQGQG14PK",
   "pathPrefix": "/",
   "feedLimit": 4,

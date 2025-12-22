@@ -24,10 +24,6 @@ interface SiteMetadata {
       copyright: string;
       title: string;
       url: string;
-      cusdis?: {
-        appId: string;
-        host: string;
-      };
     };
   };
 }

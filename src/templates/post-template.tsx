@@ -6,7 +6,6 @@ import { type Node } from "@/types/node";
 import { Meta } from "@/components/meta";
 import { Post } from "@/components/post";
 import { Layout } from "@/components/layout";
-import { CusdisComments } from "@/components/cusdis-comments/cusdis-comments";
 import { useSiteMetadata } from "@/hooks/use-site-metadata";
 
 interface PostTemplateProps {
@@ -17,22 +16,11 @@ interface PostTemplateProps {
 
 const PostTemplate: FC<PostTemplateProps> = ({
   data: { markdownRemark },
-}) => {
-  const { url } = useSiteMetadata();
-  const pageSlug = markdownRemark.frontmatter.slug || markdownRemark.fields.slug;
-  const pageUrl = `${url}${pageSlug}`;
-
-  return (
-    <Layout>
-      <Post post={markdownRemark} />
-      <CusdisComments
-        pageId={markdownRemark.id}
-        pageUrl={pageUrl}
-        pageTitle={markdownRemark.frontmatter.title}
-      />
-    </Layout>
-  );
-};
+}) => (
+  <Layout>
+    <Post post={markdownRemark} />
+  </Layout>
+);
 
 export const query = graphql`
   query PostTemplate($slug: String!) {
