@@ -10,9 +10,9 @@ tags:
 description: "a brief summary of linear algebra."
 socialImage: "./image.jpg"
 ---
-### chapter 1
+## Chapter 1
 
-##### 1.1 Vector
+### 1.1 Vector
 Origin of trigonometric formulas:    (dot product-- $\theta$ is the angle between two vectors)
 $$
 \cos\theta=\cos(\beta-\alpha)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
@@ -22,7 +22,7 @@ $$
 right multiplication vs left multiplication    column operation vs row operation
 ![[Pasted image 20241209191936.png#||500]]
 ![[Pasted image 20241209192003.png||500]]
-##### 1.2 Dot Product
+### 1.2 Dot Product
 Inequality formulas:
 $$
 \begin{aligned}&|v\cdot w|\leq\left\|v\right\|\left\|w\right\|\\&\|v+w\|\leq\|v\|+\|w\|
@@ -30,13 +30,13 @@ $$
 $$
 For $v=(a,b),w=(b,a)$   =>  $2ab \le  a^2+b^2$   if $x=a^{2} \quad  y=b^2$  =>  $\sqrt{xy}\leq\frac{x+y}2.$  (geometric mean $\le$ arithmetic mean)
 
-##### 1.3 Matrices
+### 1.3 Matrices
 $x(t)=t^2$
 Forward:  $x(t+1)-x(t)=2t+1$
 Backward:  $x(t)-x(t-1)=2t-1$
 Centered:   $\frac{x(t+1)-x(t-1)}{2}=2t$
 
-### chapter 2
+## Chapter 2
 row picture    hyperlanes meeting at a single point
 column picture     column vectors combination to produce the  target vector b
 

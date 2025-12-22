@@ -27,7 +27,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
-      tableOfContents(maxDepth: 3)
+      tableOfContents(maxDepth: 6)
       fields {
         slug
         tagSlugs
