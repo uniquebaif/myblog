@@ -56,7 +56,9 @@
     "katex": "^0.16.27",
     "prismjs": "^1.29.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "remark-mark-highlight": "^0.1.1",
+    "unist-util-visit": "4"
   },
   "devDependencies": {
     "@happy-dom/global-registrator": "^18.0.1",
