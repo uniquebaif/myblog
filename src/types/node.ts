@@ -6,6 +6,7 @@ interface Node {
   html: string;
   fields: Fields;
   frontmatter: Frontmatter;
+  tableOfContents?: string;
 }
 
 export { type Node };

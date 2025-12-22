@@ -6,6 +6,12 @@
   "googleAnalyticsId": "G-MSQGQG14PK",
   "pathPrefix": "/",
   "feedLimit": 4,
+  "giscus": {
+    "repo": "uniquebaif/myblog",
+    "repoId": "R_kgDOQsiEKA",
+    "category": "Announcements",
+    "categoryId": "DIC_kwDOQsiEKM4C0EQj"
+  },
   "menu": [
     {
       "title": "Articles",
