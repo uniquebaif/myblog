@@ -10,7 +10,7 @@ interface TagsQueryResult {
 }
 
 const useTagsList = () => {
-  const { allMarkdownRemark } = useStaticQuery<TagsQueryResult>(graphql`
+  const result = useStaticQuery<TagsQueryResult>(graphql`
     query TagsListQuery {
       allMarkdownRemark(
         filter: {
@@ -25,7 +25,7 @@ const useTagsList = () => {
     }
   `);
 
-  return allMarkdownRemark.group || [];
+  return result?.allMarkdownRemark?.group ?? [];
 };
 
 export { useTagsList };

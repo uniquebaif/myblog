@@ -1,9 +1,19 @@
 // Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
-exports[`SidebarMenu renders correctly 1`] = `
+exports[`SidebarTags renders correctly 1`] = `
 {
   "$$typeof": Symbol(react.test.json),
   "children": [
+    {
+      "$$typeof": Symbol(react.test.json),
+      "children": [
+        "Tags",
+      ],
+      "props": {
+        "className": undefined,
+      },
+      "type": "div",
+    },
     {
       "$$typeof": Symbol(react.test.json),
       "children": [
@@ -13,7 +23,7 @@ exports[`SidebarMenu renders correctly 1`] = `
             {
               "$$typeof": Symbol(react.test.json),
               "children": [
-                "Articles",
+                "All",
               ],
               "props": {
                 "aria-current": "page",
@@ -37,12 +47,24 @@ exports[`SidebarMenu renders correctly 1`] = `
             {
               "$$typeof": Symbol(react.test.json),
               "children": [
-                "About Me",
+                "AI",
+                {
+                  "$$typeof": Symbol(react.test.json),
+                  "children": [
+                    "(",
+                    "3",
+                    ")",
+                  ],
+                  "props": {
+                    "className": undefined,
+                  },
+                  "type": "span",
+                },
               ],
               "props": {
                 "aria-current": undefined,
-                "className": undefined,
-                "href": "/pages/about",
+                "className": "undefined",
+                "href": "/?tag=AI",
                 "onClick": [Function],
                 "onMouseEnter": [Function],
               },
@@ -60,12 +82,24 @@ exports[`SidebarMenu renders correctly 1`] = `
             {
               "$$typeof": Symbol(react.test.json),
               "children": [
-                "Contact Me",
+                "Typography",
+                {
+                  "$$typeof": Symbol(react.test.json),
+                  "children": [
+                    "(",
+                    "1",
+                    ")",
+                  ],
+                  "props": {
+                    "className": undefined,
+                  },
+                  "type": "span",
+                },
               ],
               "props": {
                 "aria-current": undefined,
-                "className": undefined,
-                "href": "/pages/contacts",
+                "className": "",
+                "href": "/?tag=Typography",
                 "onClick": [Function],
                 "onMouseEnter": [Function],
               },
@@ -87,6 +121,6 @@ exports[`SidebarMenu renders correctly 1`] = `
   "props": {
     "className": undefined,
   },
-  "type": "nav",
+  "type": "div",
 }
 `;

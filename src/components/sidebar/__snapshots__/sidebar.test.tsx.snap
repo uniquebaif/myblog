@@ -1,4 +1,4 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
 exports[`Sidebar renders correctly 1`] = `
 {
@@ -390,6 +390,128 @@ exports[`Sidebar renders correctly 1`] = `
                         "href": "https://t.me/#",
                         "rel": "noopener noreferrer",
                         "target": "_blank",
+                      },
+                      "type": "a",
+                    },
+                  ],
+                  "props": {
+                    "className": undefined,
+                  },
+                  "type": "li",
+                },
+              ],
+              "props": {
+                "className": undefined,
+              },
+              "type": "ul",
+            },
+          ],
+          "props": {
+            "className": undefined,
+          },
+          "type": "div",
+        },
+        {
+          "$$typeof": Symbol(react.test.json),
+          "children": [
+            {
+              "$$typeof": Symbol(react.test.json),
+              "children": [
+                "Tags",
+              ],
+              "props": {
+                "className": undefined,
+              },
+              "type": "div",
+            },
+            {
+              "$$typeof": Symbol(react.test.json),
+              "children": [
+                {
+                  "$$typeof": Symbol(react.test.json),
+                  "children": [
+                    {
+                      "$$typeof": Symbol(react.test.json),
+                      "children": [
+                        "All",
+                      ],
+                      "props": {
+                        "aria-current": "page",
+                        "className": "undefined",
+                        "href": "/",
+                        "onClick": [Function],
+                        "onMouseEnter": [Function],
+                        "style": {},
+                      },
+                      "type": "a",
+                    },
+                  ],
+                  "props": {
+                    "className": undefined,
+                  },
+                  "type": "li",
+                },
+                {
+                  "$$typeof": Symbol(react.test.json),
+                  "children": [
+                    {
+                      "$$typeof": Symbol(react.test.json),
+                      "children": [
+                        "Design",
+                        {
+                          "$$typeof": Symbol(react.test.json),
+                          "children": [
+                            "(",
+                            "1",
+                            ")",
+                          ],
+                          "props": {
+                            "className": undefined,
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "props": {
+                        "aria-current": undefined,
+                        "className": "",
+                        "href": "/?tag=Design",
+                        "onClick": [Function],
+                        "onMouseEnter": [Function],
+                      },
+                      "type": "a",
+                    },
+                  ],
+                  "props": {
+                    "className": undefined,
+                  },
+                  "type": "li",
+                },
+                {
+                  "$$typeof": Symbol(react.test.json),
+                  "children": [
+                    {
+                      "$$typeof": Symbol(react.test.json),
+                      "children": [
+                        "Typography",
+                        {
+                          "$$typeof": Symbol(react.test.json),
+                          "children": [
+                            "(",
+                            "2",
+                            ")",
+                          ],
+                          "props": {
+                            "className": undefined,
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "props": {
+                        "aria-current": undefined,
+                        "className": "",
+                        "href": "/?tag=Typography",
+                        "onClick": [Function],
+                        "onMouseEnter": [Function],
                       },
                       "type": "a",
                     },

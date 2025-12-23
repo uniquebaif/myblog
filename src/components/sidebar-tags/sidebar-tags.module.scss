@@ -1,0 +1,55 @@
+@use "src/assets/styles/mixins";
+@use "src/assets/styles/variables";
+
+.sidebar-tags {
+  @include mixins.margin-bottom(1);
+
+  .title {
+    color: hsl(var(--color-muted-foreground));
+    font-size: variables.$typography-base-font-size * 0.875;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    @include mixins.margin(0, 0, 0.5, 0);
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    @include mixins.margin-equal(0);
+    @include mixins.padding-equal(0);
+  }
+
+  .item {
+    @include mixins.margin-equal(0);
+    @include mixins.padding-equal(0);
+  }
+
+  .link {
+    border: 0;
+    color: hsl(var(--color-foreground));
+    font-size: variables.$typography-base-font-size * 0.9375;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid hsl(var(--color-primary));
+      color: hsl(var(--color-primary));
+    }
+
+    &.active {
+      border-bottom: 1px solid hsl(var(--color-foreground));
+      color: hsl(var(--color-foreground));
+      font-weight: 600;
+    }
+  }
+
+  .count {
+    color: hsl(var(--color-muted-foreground));
+    font-size: variables.$typography-base-font-size * 0.875;
+    @include mixins.margin-left(0.25);
+  }
+}
+
