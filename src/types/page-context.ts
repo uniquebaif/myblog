@@ -2,7 +2,7 @@ import { type Pagination } from "./pagination";
 
 interface PageContext {
   group?: string;
-  pagination: Pagination;
+  pagination?: Pagination;
 }
 
 export { type PageContext };

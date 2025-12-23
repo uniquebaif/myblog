@@ -7,7 +7,6 @@ import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
 import { Layout } from "@/components/layout";
 import { Sidebar } from "@/components/sidebar";
-import { Pagination } from "@/components/pagination";
 import { useSiteMetadata } from "@/hooks/use-site-metadata";
 import type { AllMarkdownRemark } from "@/types/all-markdown-remark";
 import type { PageContext } from "@/types/page-context";
@@ -19,10 +18,7 @@ interface IndexTemplateProps {
   pageContext: PageContext;
 }
 
-const IndexTemplate: FC<IndexTemplateProps> = ({ data, pageContext }) => {
-  const { pagination } = pageContext;
-  const { hasNextPage, hasPrevPage, prevPagePath, nextPagePath } = pagination;
-
+const IndexTemplate: FC<IndexTemplateProps> = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
 
   return (
@@ -30,22 +26,14 @@ const IndexTemplate: FC<IndexTemplateProps> = ({ data, pageContext }) => {
       <Sidebar isHome />
       <Page>
         <Feed edges={edges} />
-        <Pagination
-          prevPagePath={prevPagePath}
-          nextPagePath={nextPagePath}
-          hasPrevPage={hasPrevPage}
-          hasNextPage={hasNextPage}
-        />
       </Page>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query IndexTemplate($limit: Int!, $offset: Int!) {
+  query IndexTemplate {
     allMarkdownRemark(
-      limit: $limit
-      skip: $offset
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
     ) {
@@ -68,14 +56,9 @@ export const query = graphql`
   }
 `;
 
-export const Head: FC<IndexTemplateProps> = ({ pageContext }) => {
+export const Head: FC<IndexTemplateProps> = () => {
   const { title, description } = useSiteMetadata();
-  const {
-    pagination: { currentPage: page },
-  } = pageContext;
-  const pageTitle = page > 0 ? `Posts - Page ${page} - ${title}` : title;
-
-  return <Meta title={pageTitle} description={description} />;
+  return <Meta title={title} description={description} />;
 };
 
 export default IndexTemplate;
